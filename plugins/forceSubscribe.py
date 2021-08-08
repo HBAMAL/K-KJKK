@@ -86,14 +86,14 @@ def fsub(client, message):
                 time.sleep(1)
           sent_message.edit('✅ **DONE UNMUTED EVERYONE.**')
         except ChatAdminRequired:
-          sent_message.edit('❗ **I am not an admin in this chat.**\n__I can\'t unmute members because i am not an admin in this chat make me admin with ban user permission.__')
+          sent_message.edit('😕**MAKE ME AS ADMIN IN THIS GROUP**\n__THEN TRY ONCE MORE....__')
       else:
         try:
           client.get_chat_member(input_str, "me")
           sql.add_channel(chat_id, input_str)
-          message.reply_text(f"✅ **Force Subscribe is Enabled**\n__Force Subscribe is enabled, all the group members have to subscribe this [channel](https://t.me/{input_str}) in order to send messages in this group.__", disable_web_page_preview=True)
+          message.reply_text(f"✅ **DONE ENABLED **\n__FORCE SUBSCRIBE, NEW USERS AND ALL MEMBERS IN THIS CHAT MUST JOIN THIS [channel](https://t.me/{input_str}).__", disable_web_page_preview=True)
         except UserNotParticipant:
-          message.reply_text(f"❗ **MAKE ME AS ADMIN UR nnel**\n__I am not an admin in the [channel](https://t.me/{input_str}). Add me as a admin in order to enable ForceSubscribe.__", disable_web_page_preview=True)
+          message.reply_text(f"😕 **MAKE ME AS ADMIN IN UR CHANNEL**\n__ [channel](https://t.me/{input_str}). THEN TRY ONCEMORE..__", disable_web_page_preview=True)
         except (UsernameNotOccupied, PeerIdInvalid):
           message.reply_text(f"⚠️ **INVALID USERNAME⚠️")
         except Exception as err:
