@@ -16,7 +16,7 @@ def _start(client, message):
 @Client.on_message(filters.private & filters.incoming & filters.command(["about"]))
 def _about_message(client, message):
     client.send_message(message.chat.id,
-    text = tr.ABOUT_MSG
+        text=tr.ABOUT_MSG
         parse_mode="markdown",
         reply_to_message_id=message.message_id
         )
