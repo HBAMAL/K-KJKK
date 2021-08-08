@@ -20,9 +20,9 @@ def _about_message(client, message):
     reply_markup = ABOUT_BUTTONS
     await update.reply_text(
         text=text,
-        disable_web_page_preview=True,
-        reply_markup=reply_markup
-    )     
+        parse_mode="markdown",
+        reply_to_message_id=message.message_id
+        )
 
 
 @Client.on_message(filters.private & filters.incoming & filters.command(['help']))
@@ -41,7 +41,7 @@ help_callback_filter = filters.create(lambda _, __, query: query.data.startswith
 def help_answer(client, callback_query):
     chat_id = callback_query.from_user.id
     message_id = callback_query.message.message_id
-    msg = int(callback_query.data.split('+')[1])
+    msg = int(callback_query.data.split('+')[-1])
     client.edit_message_text(chat_id=chat_id,    message_id=message_id,
         text=tr.HELP_MSG[msg],    reply_markup=InlineKeyboardMarkup(map(msg))
     )
