@@ -15,4 +15,7 @@ class Messages():
         "USE THIS COMMANDS IN GROUP ** /ForceSubscribe - To get the current settings\n\n /ForceSubscribe no/off/disable - To turn of ForceSubscribe\n\n/ForceSubscribe clear - To unmute all members\n\n /ForceSubscribe (channel username) - To turn on and setup the channel.**"
       ]
 
-      START_MSG = "**HLO [👋] [{}](tg://user?id={})**\n\n● I CAN FORCE MEMBERS TO JOIN YOUR CHANNEL\n\nMADE BY @TELSABOTS"
+      START_MSG = "**HLO [👋 [{}](tg://user?id={})**\n\n● I CAN FORCE MEMBERS TO JOIN YOUR CHANNEL\n\nMADE BY @TELSABOTS"
+      
+      ABOUT_MSG = "🤖<b>BOT:FORCE SUB 🤖</b>\n\n📢<b>CHANNEL : @TELSABOTS'\n\n🧑🏼‍💻DEV🧑🏼‍💻: @ALLUADDICT
+
