@@ -12,7 +12,7 @@ class Config(object):
 class Messages():
       HELP_MSG = [
         ".",
-        "[👨‍💻] **DEVELOPED BY @doreamonfans1**"
+        "USE THIS COMMANDS IN GROUP ** /ForceSubscribe - To get the current settings\n\n /ForceSubscribe no/off/disable - To turn of ForceSubscribe\n\n/ForceSubscribe clear - To unmute all members\n\n /ForceSubscribe (channel username) - To turn on and setup the channel.**"
       ]
 
       START_MSG = "**HLO [👋] [{}](tg://user?id={})**\n\n● I CAN FORCE MEMBERS TO JOIN YOUR CHANNEL\n\nMADE BY @TELSABOTS"
