@@ -51,15 +51,15 @@ def _check_member(client, message):
       except UserNotParticipant:
         try:
           sent_message = message.reply_text(
-              "HLO {} 👋🏻  **PLZ JOIN MY**   [✅CHANNEL✅](https://t.me/{})  **THEN PRESS UNMUTE BUTTON ** TO UNMUTE .".format(message.from_user.mention, channel, channel),
+              "HLO {} 👋🏻  **PLZ JOIN MY**  [CHANNEL](https://t.me/{})  **THEN PRESS UNMUTE BUTTON ** TO UNMUTE .".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton("🔔 UnMute Me 🔕", callback_data="onUnMuteRequest"),InlineKeyboardButton('Google', url=f"https://www.google.com/search?")]]
+                  [[InlineKeyboardButton("🥳JOIN🥳", ),InlineKeyboardButton('🗣UNMUTE ME 🗣', callback_data="onUnMuteRequest")]]
               )
           )
           client.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=False))
         except ChatAdminRequired:
-          sent_message.edit(" **😕 an admin here.**\n__Make me admin with ban user permission and add me again.\n#Leaving this chat...__")
+          sent_message.edit(" **😕MAKE ME AS ADMIN IN THIS GROUP**\n__THEN TRY ONCE MORE...__")
           client.leave_chat(chat_id)
       except ChatAdminRequired:
         client.send_message(chat_id, text=f"😕 **MAKE ME AS ADMIN IN UR CHANNEL @{channel}**\n__THEN TRY ONCE MORE__")
@@ -76,9 +76,9 @@ def fsub(client, message):
       input_str = input_str.replace("@", "")
       if input_str.lower() in ("off", "no", "disable"):
         sql.disapprove(chat_id)
-        message.reply_text("❌ **Force Subscribe is Disabled Successfully.**")
+        message.reply_text("🚫 **DONE DISABLED🚫**")
       elif input_str.lower() in ('clear'):
-        sent_message = message.reply_text('**Unmuting all members who are muted by me...**')
+        sent_message = message.reply_text('**UNMUTING ...**')
         try:
           for chat_member in client.get_chat_members(message.chat.id, filter="restricted"):
             if chat_member.restricted_by.id == (client.get_me()).id:
@@ -93,15 +93,15 @@ def fsub(client, message):
           sql.add_channel(chat_id, input_str)
           message.reply_text(f"✅ **Force Subscribe is Enabled**\n__Force Subscribe is enabled, all the group members have to subscribe this [channel](https://t.me/{input_str}) in order to send messages in this group.__", disable_web_page_preview=True)
         except UserNotParticipant:
-          message.reply_text(f"❗ **Not an Admin in the Channel**\n__I am not an admin in the [channel](https://t.me/{input_str}). Add me as a admin in order to enable ForceSubscribe.__", disable_web_page_preview=True)
+          message.reply_text(f"❗ **MAKE ME AS ADMIN UR nnel**\n__I am not an admin in the [channel](https://t.me/{input_str}). Add me as a admin in order to enable ForceSubscribe.__", disable_web_page_preview=True)
         except (UsernameNotOccupied, PeerIdInvalid):
-          message.reply_text(f"❗ **Invalid Channel Username.**")
+          message.reply_text(f"⚠️ **INVALID USERNAME⚠️")
         except Exception as err:
-          message.reply_text(f"❗ **ERROR:** ```{err}```")
+          message.reply_text(f"⚠️ **ERROR:** ```{err}``` ⚠️️")
     else:
       if sql.fs_settings(chat_id):
-        message.reply_text(f"✅ **Force Subscribe is enabled in this chat.**\n__For this [Channel](https://t.me/{sql.fs_settings(chat_id).channel})__", disable_web_page_preview=True)
+        message.reply_text(f"✅ **DONE NEW USERS AND ALL MEMBERS IN THIS CHAT **\n__MUST JOIN THIS [❤️CHANNEL❤️](https://t.me/{sql.fs_settings(chat_id).channel})__", disable_web_page_preview=True)
       else:
-        message.reply_text("**FORCE SUBSCRIBE IS DISABLED.**")
+        message.reply_text("**🚫FORCE SUBSCRIBE IS DISABLED🚫**")
   else:
-      message.reply_text("❗ **Group Creator Required**\n__You have to be the group creator to do that.__")
+      message.reply_text("**HEY I ONLY DEALS WITH OWNER 😏**\n__....__")
