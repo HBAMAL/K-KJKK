@@ -17,6 +17,7 @@ def _start(client, message):
 def _about_message(client, message):
     client.send_message(message.chat.id,
         text=tr.ABOUT_MSG,
+        reply_markup = START_BUTTONS                
         parse_mode="markdown",
         reply_to_message_id=message.message_id
         )
@@ -43,6 +44,16 @@ def help_answer(client, callback_query):
         text=tr.HELP_MSG[msg],    reply_markup=InlineKeyboardMarkup(map(msg))
     )
 
+START_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('🤩SOURCE🤩', url='https://hbamal.blogspot.com/2021/08/how-to-make-your-own-discussion-unpin_4.html'),
+        InlineKeyboardButton('💟TOTOURIAL💟', url='https://www.youtube.com/watch?v=sXTg5CB9dy8')
+        ],[
+        InlineKeyboardButton('🆘HELP🆘', callback_data='help'),
+        InlineKeyboardButton('🤗ABOUT🤗', callback_data='about'),
+        InlineKeyboardButton('🔐CLOSE🔐', callback_data='close')
+        ]]
+    )
 
 def map(pos):
     if(pos==1):
