@@ -26,9 +26,9 @@ def _onUnMuteRequest(client, cb):
             if cb.message.reply_to_message.from_user.id == user_id:
               cb.message.delete()
           except UserNotParticipant:
-            client.answer_callback_query(cb.id, text="❗ Join the mentioned 'channel' and press the 'UnMute Me' button again.", show_alert=True)
+            client.answer_callback_query(cb.id, text="⚠️ JOIN CHANNEL FIRST & PRESS UNMUTE BUTTON⚠️", show_alert=True)
       else:
-        client.answer_callback_query(cb.id, text="❗ You are muted by admins for other reasons.", show_alert=True)
+        client.answer_callback_query(cb.id, text="IDK", show_alert=True)
     else:
       if not client.get_chat_member(chat_id, (client.get_me()).id).status == 'administrator':
         client.send_message(chat_id, f"❗ **{cb.from_user.mention} is trying to UnMute himself but i can't unmute him because i am not an admin in this chat add me as admin again.**\n__#Leaving this chat...__")
@@ -53,18 +53,16 @@ def _check_member(client, message):
           sent_message = message.reply_text(
               "HLO {} 👋🏻  **PLZ JOIN MY**   [✅CHANNEL✅](https://t.me/{})  **THEN PRESS UNMUTE BUTTON ** TO UNMUTE .".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
-              reply_markup=InlineKeyboardMarkup(
-                  [[
-                  InlineKeyboardButton('Wikipedia', callback_data="onUnMuteRequest"),
-                  InlineKeyboardButton('Google', url=f"https://www.google.com/search?")
-                  ]]
-           )
+                reply_markup=InlineKeyboardMarkup(
+                  [[InlineKeyboardButton("🔔 UnMute Me 🔕", callback_data="onUnMuteRequest"),InlineKeyboardButton('Google', url=f"https://www.google.com/search?")]]
+              )
+          )
           client.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=False))
         except ChatAdminRequired:
-          sent_message.edit("❗ **I am not an admin here.**\n__Make me admin with ban user permission and add me again.\n#Leaving this chat...__")
+          sent_message.edit(" **😕 an admin here.**\n__Make me admin with ban user permission and add me again.\n#Leaving this chat...__")
           client.leave_chat(chat_id)
       except ChatAdminRequired:
-        client.send_message(chat_id, text=f"❗ **I am not an admin in @{channel}**\n__Make me admin in the channel and add me again.\n#Leaving this chat...__")
+        client.send_message(chat_id, text=f"😕 **MAKE ME AS ADMIN IN UR CHANNEL @{channel}**\n__THEN TRY ONCE MORE__")
         client.leave_chat(chat_id)
 
 
