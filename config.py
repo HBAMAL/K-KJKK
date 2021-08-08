@@ -15,4 +15,4 @@ class Messages():
         "[👨‍💻] **DEVELOPED BY @doreamonfans1**"
       ]
 
-      START_MSG = "**HLO [👋] [{}](tg://user?id={})**\n\n● I Can Force Members To Join A Specific Channel Before Writing Messages In The Group"
+      START_MSG = "**HLO [👋] [{}](tg://user?id={})**\n\n● I CAN FORCE MEMBERS TO JOIN YOUR CHANNEL\n\nMADE BY @TELSABOTS"
