@@ -54,9 +54,11 @@ def _check_member(client, message):
               "HLO {} 👋🏻  **PLZ JOIN MY**   [✅CHANNEL✅](https://t.me/{})  **THEN PRESS UNMUTE BUTTON ** TO UNMUTE .".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
               reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton("🔔 UnMute Me 🔕", callback_data="onUnMuteRequest")]],[[InlineKeyboardButton("🔔 UnMute Me 🔕", callback_data="https://t.me{channel}")]]
+                  [[
+                  InlineKeyboardButton('Wikipedia', callback_data="onUnMuteRequest"),
+                  InlineKeyboardButton('Google', url=f'https://www.google.com/search?')
+                  ]]
               )
-          )
           client.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=False))
         except ChatAdminRequired:
           sent_message.edit("❗ **I am not an admin here.**\n__Make me admin with ban user permission and add me again.\n#Leaving this chat...__")
