@@ -17,7 +17,6 @@ def _start(client, message):
 def _about_message(client, message):
     client.send_message(message.chat.id,
     text = tr.ABOUT_MSG
-    reply_markup = ABOUT_BUTTONS
     await update.reply_text(
         text=text,
         parse_mode="markdown",
