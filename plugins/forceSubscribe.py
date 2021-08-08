@@ -31,7 +31,7 @@ def _onUnMuteRequest(client, cb):
         client.answer_callback_query(cb.id, text="IDK", show_alert=True)
     else:
       if not client.get_chat_member(chat_id, (client.get_me()).id).status == 'administrator':
-        client.send_message(chat_id, f"⚠️ **{cb.from_user.mention} IS TRYING TO UNMUTE HIMSELF BUT I CAN'T UNUMUTE HIM BECAUSEI AM NOT ADMIN THIS CHAT ADD ME AS ADMIN**\n__#Leaving this chat...__")
+        client.send_message(chat_id, f"⚠️ **{cb.from_user.mention} IS TRYING TO UNMUTE HIMSELF BUT I CAN'T UNUMUTE HIM BECAUSE I AM NOT ADMIN IN GROUP MAKE ME AS ADMIN**\n__AND TRY ONCE MORE...__")
         client.leave_chat(chat_id)
       else:
         client.answer_callback_query(cb.id, text="⚠️ JOIN CHANNEL FIRST ⚠️", show_alert=True)
