@@ -12,6 +12,17 @@ def _start(client, message):
         parse_mode="markdown",
         reply_to_message_id=message.message_id
         )
+    
+@Client.on_message(filters.private & filters.incoming & filters.command(["about"]))
+def _about_message(client, message):
+    client.send_message(message.chat.id,
+    text = tr.ABOUT_MSG
+    reply_markup = ABOUT_BUTTONS
+    await update.reply_text(
+        text=text,
+        disable_web_page_preview=True,
+        reply_markup=reply_markup
+    )     
 
 
 @Client.on_message(filters.private & filters.incoming & filters.command(['help']))
@@ -39,7 +50,7 @@ def help_answer(client, callback_query):
 def map(pos):
     if(pos==1):
         button = [
-            [InlineKeyboardButton(text = '▶️', callback_data = "help+2")]
+            [InlineKeyboardButton(text = '▶️', callback_data = "help+1")]
         ]
     elif(pos==len(tr.HELP_MSG)-1):
         url = "https://github.com/DamienSoukara/FSub-Heroku"
