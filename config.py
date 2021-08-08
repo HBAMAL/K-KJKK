@@ -17,5 +17,5 @@ class Messages():
 
       START_MSG = "**HLO [👋 [{}](tg://user?id={})**\n\n● I CAN FORCE MEMBERS TO JOIN YOUR CHANNEL\n\nMADE BY @TELSABOTS"
       
-      ABOUT_MSG = "🤖<b>BOT:FORCE SUB 🤖</b>\n\n📢<b>CHANNEL : @TELSABOTS'\n\n🧑🏼‍💻DEV🧑🏼‍💻: @ALLUADDICT
+      ABOUT_MSG = "🤖<b>BOT:FORCE SUB 🤖</b>\n\n📢<b>CHANNEL : @TELSABOTS'\n\n🧑🏼‍💻DEV🧑🏼‍💻: @ALLUADDICT"
 
