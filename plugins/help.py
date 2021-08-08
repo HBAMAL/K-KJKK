@@ -17,7 +17,6 @@ def _start(client, message):
 def _about_message(client, message):
     client.send_message(message.chat.id,
     text = tr.ABOUT_MSG
-    await update.reply_text(
         text=text,
         parse_mode="markdown",
         reply_to_message_id=message.message_id
