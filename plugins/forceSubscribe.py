@@ -53,7 +53,7 @@ def _check_member(client, message):
               "Hi {}, You Are **Not Subscribed** To My [Channel](https://t.me/{}) Yet. Please 👉 [Join](https://t.me/{}) And **Press The Button Below** 👇 To Unmute Yourself.".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
               reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton("🔔 UnMute Me 🔕", callback_data="onUnMuteRequest")]]
+                  [[InlineKeyboardButton("🥳JOIN🥳", ),InlineKeyboardButton('🗣UNMUTE ME 🗣', callback_data="onUnMuteRequest")]]
               )
           )
           client.restrict_chat_member(chat_id, user_id, ChatPermissions(can_send_messages=False))
