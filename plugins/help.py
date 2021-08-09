@@ -79,9 +79,8 @@ def about(pos):
     elif(pos==len(tr.HELP_MSG)-1):
         url = "https://github.com/DamienSoukara/FSub-Heroku"
         button = [
-            [InlineKeyboardButton(text = '🗣 Support Chat', url="https://t.me/disneyteamchat")],
-            [InlineKeyboardButton(text = '🤖 updates channel', url="https://t.me/disneygrou")],
-            [InlineKeyboardButton(text = '◀️', callback_data = f"help+{pos-1}")]
+           [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
+            [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
         ]
     else:
         button = [
@@ -101,9 +100,8 @@ def start(pos):
     elif(pos==len(tr.HELP_MSG)-1):
         url = "https://github.com/DamienSoukara/FSub-Heroku"
         button = [
-            [InlineKeyboardButton(text = '🗣 Support Chat', url="https://t.me/disneyteamchat")],
-            [InlineKeyboardButton(text = '🤖 updates channel', url="https://t.me/disneygrou")],
-            [InlineKeyboardButton(text = '◀️', callback_data = f"help+{pos-1}")]
+            [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
+            [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
         ]
     else:
         button = [
