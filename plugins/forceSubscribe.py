@@ -54,7 +54,7 @@ def _check_member(client, message):
               "HLO {} 👋🏻  **PLZ JOIN MY**  [CHANNEL](https://t.me/{})  **THEN PRESS UNMUTE BUTTON ** TO UNMUTE .".format(message.from_user.mention, channel, channel),
               disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(
-                  [[InlineKeyboardButton('🥳JOIN🥳', url="https://t.me/{}"),
+                  [[InlineKeyboardButton('🥳JOIN🥳', url="https://t.me/{input_str}"),
                     InlineKeyboardButton('🗣UNMUTE ME 🗣', callback_data="onUnMuteRequest")]]
                 )
           )
