@@ -18,6 +18,8 @@ def _about_message(client, message):
     client.send_message(message.chat.id,
         text=tr.ABOUT_MSG,
         parse_mode="markdown",
+        disable_notification = True,
+        reply_markup = InlineKeyboardMarkup(about(1)),
         reply_to_message_id=message.message_id
         )
 
@@ -47,6 +49,28 @@ def help_answer(client, callback_query):
 
 def map(pos):
     if(pos==1):
+        button = [
+            [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
+            [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
+        ]
+    elif(pos==len(tr.HELP_MSG)-1):
+        url = "https://github.com/DamienSoukara/FSub-Heroku"
+        button = [
+            [InlineKeyboardButton(text = '🗣 Support Chat', url="https://t.me/disneyteamchat")],
+            [InlineKeyboardButton(text = '🤖 updates channel', url="https://t.me/disneygrou")],
+            [InlineKeyboardButton(text = '◀️', callback_data = f"help+{pos-1}")]
+        ]
+    else:
+        button = [
+            [
+                InlineKeyboardButton(text = '◀️', callback_data = f"help+{pos-1}"),
+                InlineKeyboardButton(text = '▶️', callback_data = f"help+{pos+1}")
+            ],
+        ]
+    return button
+
+def about(pos):
+    if(pos==3):
         button = [
             [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
             [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
