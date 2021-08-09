@@ -75,6 +75,7 @@ def about(pos):
         button = [
             [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
             [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
+        ]
     elif(pos==len(tr.HELP_MSG)-1):
         url = "https://github.com/DamienSoukara/FSub-Heroku"
         button = [
@@ -96,6 +97,7 @@ def start(pos):
         button = [
             [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
             [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
+        ]
     elif(pos==len(tr.HELP_MSG)-1):
         url = "https://github.com/DamienSoukara/FSub-Heroku"
         button = [
