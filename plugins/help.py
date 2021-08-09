@@ -86,8 +86,8 @@ def about(pos):
     else:
         button = [
             [
-                InlineKeyboardButton(text = '◀️', callback_data = f"help+{pos-1}"),
-                InlineKeyboardButton(text = '▶️', callback_data = f"help+{pos+1}")
+                [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
+           [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
             ],
         ]
     return button
@@ -108,8 +108,8 @@ def start(pos):
     else:
         button = [
             [
-                InlineKeyboardButton(text = '◀️', callback_data = f"help+{pos-1}"),
-                InlineKeyboardButton(text = '▶️', callback_data = f"help+{pos+1}")
+                [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
+                [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
             ],
         ]
     return button
