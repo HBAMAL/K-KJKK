@@ -103,7 +103,7 @@ def start(pos):
         url = "https://github.com/DamienSoukara/FSub-Heroku"
         button = [
             [InlineKeyboardButton(text = '❤️CHANNNEL❤️', url="https://t.me/telsabots")],
-            [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],
+            [InlineKeyboardButton(text = '🧑🏼‍💻DEV🧑🏼‍💻', url="https://t.me/alluaddict")],[InlineKeyboardButton(text = '◀️', callback_data = f"about+{pos-1}")],
         ]
     else:
         button = [
