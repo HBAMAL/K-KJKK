@@ -10,7 +10,7 @@ def _start(client, message):
     client.send_message(message.chat.id,
         text=tr.START_MSG.format(message.from_user.first_name, message.from_user.id),
         parse_mode="markdown",
-        isable_notification = True,
+        disable_notification = True,
         reply_markup = InlineKeyboardMarkup(start(1)),
         reply_to_message_id=message.message_id
         )
